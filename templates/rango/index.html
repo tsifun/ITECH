@@ -1,3 +1,48 @@
+<<<<<<< HEAD
+{% extends 'rango/base.html' %}
+	{% load staticfiles %}
+	{% block title_block %}
+		Index
+	{% endblock %}
+	{% block body_block %}
+		<div>
+        <h1>Rango says...</h1>       
+			hey there partner! 
+		</div>	
+		<div>
+			<div>
+				<h2>Most Liked Categories</h2>
+			</div>
+         	{% if categories %}
+             <ul>
+                 {% for category in categories %}
+                 	<li><a href="{% url 'show_category' category.slug %}">{{ category.name }}</a></li>
+                 {% endfor %}
+             </ul>
+        {% else %}
+             <strong>There are no categories present.</strong>
+        {% endif %}
+			</div>
+			
+				<div>
+					<div>
+						<h2>Most Viewed Pages</h2>
+					</div>
+	         	   {% if pages %}
+	             	<ul>
+	                 {% for page in pages %}
+	                 <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+	                 {% endfor %}
+	             	</ul>
+	        		{% else %}
+	             <strong>There are no categories present.</strong>
+	       	  		{% endif %}
+			</div>
+			
+        <img src="{% static "images/rango.jpg" %}" alt="Picture of Rango" /> 
+		
+	{% endblock %}
+=======
 <!DOCTYPE html>
 {% load staticfiles %}
 <html>
@@ -73,3 +118,4 @@
     </div>
 </body>
 </html>
+>>>>>>> 494c4bd5839960f7c21e3ba2e673ddb51c4f95bb
